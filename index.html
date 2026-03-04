@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Dupatta House - Raja Road, Dehradun</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #800020; /* Burgundy */
@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg);
@@ -30,16 +30,19 @@
         }
 
         header h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5rem;
+            color: var(--secondary);
             margin: 0;
-            font-size: 2.5rem;
             letter-spacing: 2px;
+            text-shadow: 2px 2px #fff;
         }
 
-        .address {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .location {
+            font-size: 1.1rem;
+            color: #7f8c8d;
             margin-top: 0.5rem;
+            font-weight: 600;
         }
 
         .container {
@@ -73,7 +76,9 @@
             color: var(--primary);
             border-bottom: 2px solid var(--secondary);
             display: inline-block;
+            padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .form-group {
@@ -84,16 +89,20 @@
         label {
             display: block;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin-bottom: 0.3rem;
+            color: var(--primary);
         }
 
-        input, select {
+        input[type="text"],
+        input[type="number"],
+        select {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-sizing: border-box;
+            font-size: 1rem;
         }
 
         button {
@@ -104,102 +113,118 @@
             border: none;
             border-radius: 8px;
             font-weight: 600;
+            font-size: 1.1rem;
             cursor: pointer;
             margin-top: 1rem;
-            transition: opacity 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(128, 0, 32, 0.3);
         }
 
         button:hover {
             opacity: 0.9;
+            transform: translateY(-3px);
         }
 
-        .admin-btn { background-color: #333; }
-        .billing-btn { background-color: #138808; } /* Indian Green */
+        .admin-btn {
+            background-color: #333;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .billing-btn {
+            background-color: #25D366; /* WhatsApp Green */
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
 
         footer {
             text-align: center;
             padding: 2rem;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: #888;
+            margin-top: 50px;
         }
 
-        .pattern-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://www.transparenttextures.com/patterns/p6.png');
-            opacity: 0.05;
-            z-index: -1;
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .main-content {
+                padding: 30px 15px;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .card h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="pattern-bg"></div>
+
     <header>
-        <h1>MINI DUPATTA HOUSE</h1>
-        <div class="address">Raja Road, Dehradun, Uttarakhand</div>
+        <h1>Mini Dupatta House</h1>
+        <div class="location">Dehradun's Finest Dupattas</div>
     </header>
 
     <div class="container">
         <div class="login-cards">
-            <!-- STAFF SECTION -->
+            <!-- STAFF LOGIN -->
             <div class="card">
-                <h2>Inventory Entry (Staff)</h2>
+                <h2>Staff Login</h2>
                 <div class="form-group">
                     <label>SKU ID</label>
-                    <input type="text" placeholder="e.g. DUP- silk-001">
+                    <input type="text" placeholder="Enter SKU ID...">
                 </div>
                 <div class="form-group">
                     <label>Rate (₹)</label>
-                    <input type="number" placeholder="Enter price">
+                    <input type="number" placeholder="Enter Rate...">
                 </div>
                 <div class="form-group">
-                    <label>Unit</label>
-                    <input type="text" placeholder="e.g. Meters per piece">
+                    <label>Unit (e.g., Meters/Piece)</label>
+                    <input type="text" placeholder="Enter Unit...">
                 </div>
-                <button onclick="alert('Item Logged Successfully')">Update Entry</button>
+                <button onclick="alert('Staff data updated!')">Update Inventory</button>
             </div>
 
-            <!-- BILLING SECTION -->
+            <!-- BILLING LOGIN -->
             <div class="card">
-                <h2>Counter Billing</h2>
+                <h2>Billing Counter</h2>
                 <div class="form-group">
                     <label>SKU ID</label>
-                    <input type="text" placeholder="Search SKU">
+                    <input type="text" placeholder="Scan or Enter SKU">
                 </div>
                 <div class="form-group">
                     <label>Quantity</label>
                     <input type="number" value="1">
                 </div>
                 <div class="form-group">
-                    <label>Discount %</label>
+                    <label>Discount (%)</label>
                     <input type="number" placeholder="0">
                 </div>
                 <div class="form-group">
                     <label>Payment Mode</label>
                     <select>
-                        <option>UPI / QR</option>
-                        <option>Cash</option>
-                        <option>Card</option>
+                        <option value="upi">UPI / QR</option>
+                        <option value="cash">Cash</option>
+                        <option value="card">Card</option>
                     </select>
                 </div>
-                <button class="billing-btn" onclick="alert('Generating Bill...')">Generate Invoice</button>
+                <button class="billing-btn" onclick="alert('Invoice Generated Successfully!')">Generate Invoice</button>
             </div>
 
-            <!-- ADMIN SECTION -->
+            <!-- ADMIN LOGIN -->
             <div class="card">
-                <h2>Admin Dashboard</h2>
-                <button class="admin-btn">Check Inventory</button>
-                <button class="admin-btn" style="margin-top:0.5rem">Physical vs Book Stock Check</button>
-                <button class="admin-btn" style="margin-top:0.5rem">Sales Reports</button>
+                <h2>Admin Panel</h2>
+                <button onclick="alert('Checking Inventory...')">Check Inventory</button>
+                <button onclick="alert('Testing Quantity...')" style="margin-top: 0.5rem;">Test Quantity On Site vs Books</button>
+                <button onclick="alert('Viewing Sales Reports...')" style="margin-top: 0.5rem;">Sales Reports</button>
                 <div style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--primary);">
-                    * Secure Admin Portal
+                    * Secure Admin Access
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 Mini Dupatta House | Dehradun | Designed by Klaus 🤟🐼🤟
+        © 2026 Mini Dupatta House | Raja Road, Dehradun | Powered by Klaus 🤟🐼🤟
     </footer>
 </body>
 </html>
